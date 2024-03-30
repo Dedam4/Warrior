@@ -14,12 +14,16 @@ public class CollisionPlayer : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         hp= _infoPlayer.GetCurrentHP();
+        _infoPlayer.ChangeColorPlayerToWhite();
         if (collision.gameObject.tag == "Enemy")
         {
-            if(hp >= 0)
+            _infoPlayer.ChangeColorPlayerToRed();
+            if (hp >= 0)
             {
                 hp -= 10;
-                
+
+               
+
                  if (hp <= 0)
                 {
                     Destroy(gameObject);

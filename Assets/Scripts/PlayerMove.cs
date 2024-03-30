@@ -50,11 +50,11 @@ public class PlayerMove : MonoBehaviour
       
 
     }
-    private void RotatePlayerY(Vector2 _moveVector, int angle)
+    private void RotatePlayerY(Vector2 vector, int angle)
     {
-        _moveVector = transform.eulerAngles;
-        _moveVector.y = angle;
-        transform.rotation = Quaternion.Euler(_moveVector);
+        vector = transform.eulerAngles;
+        vector.y = angle;
+        transform.rotation = Quaternion.Euler(vector);
     }
 
     private void Jump()
