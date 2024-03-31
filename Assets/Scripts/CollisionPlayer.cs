@@ -11,10 +11,11 @@ public class CollisionPlayer : MonoBehaviour
     {
         _infoPlayer = GetComponent<InfoPlayer>();
     }
+  
     private void OnCollisionEnter2D(Collision2D collision)
     {
         hp= _infoPlayer.GetCurrentHP();
-        _infoPlayer.ChangeColorPlayerToWhite();
+  
         if (collision.gameObject.tag == "Enemy")
         {
             _infoPlayer.ChangeColorPlayerToRed();
@@ -22,21 +23,24 @@ public class CollisionPlayer : MonoBehaviour
             {
                 hp -= 10;
 
-               
-
                  if (hp <= 0)
                 {
                     Destroy(gameObject);
                 }
                 _infoPlayer.SetCurrentHP(hp);
 
-            }
-            
-            
-                
+            }   
+        
         }
+        
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        _infoPlayer.ChangeColorPlayerToWhite();
     }
 
 
-   
+
+
+
 }

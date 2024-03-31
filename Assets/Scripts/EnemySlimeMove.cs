@@ -12,15 +12,7 @@ namespace Assets.Scripts
 
         [SerializeField] Transform[] rangeMove;
         private int spot = 0;
-     
-
-
-        private void Start()
-        {
-            
-        }
-
-
+  
         void Update()
         {
             Move();
@@ -31,7 +23,7 @@ namespace Assets.Scripts
           
             transform.position = Vector3.MoveTowards(transform.position, rangeMove[spot].position, _speed * Time.deltaTime);
 
-            if(Vector2.Distance(transform.position, rangeMove[spot].position) <= 0.5f)
+            if(Vector2.Distance(transform.position, rangeMove[spot].position) <= 1f)
             {
                
                 if(spot == 1)
